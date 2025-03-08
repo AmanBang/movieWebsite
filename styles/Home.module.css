@@ -180,64 +180,105 @@
   max-width: 600px;
   margin: 40px auto;
   display: flex;
-  justify-content: center;
-}
-.search-container {
-  position: relative;
-  width: 100%;
-  background: var(--glass-bg);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border-radius: var(--radius-full);
-  border: 1px solid var(--glass-border);
-  box-shadow: var(--glass-shadow);
-  transition: all var(--transition-medium) ease;
-}
-.search-input {
-  width: 100%;
-  padding: 16px 48px 16px 24px;
-  border: none;
-  border-radius: var(--radius-full);
-  font-size: 16px;
-  outline: none;
-  background: transparent;
-  color: var(--text-primary);
-  transition: all var(--transition-medium) ease;
-}
-.search-container::after {
-  content: '';
-  position: absolute;
-  right: 20px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 20px;
-  height: 20px;
-  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="%23666" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>');
-  background-repeat: no-repeat;
-  background-position: center;
-  pointer-events: none;
-}
-.search-container:hover {
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
-  transform: translateY(-2px);
-}
-.search-input:focus {
-  box-shadow: 0 0 0 2px var(--accent-color);
-}
-
-.search-form {
-  animation: fadeIn 0.8s ease-out;
-}
-.loading,
-.error {
-  text-align: center;
-  padding: 20px;
-  font-size: 16px;
-}
-.loading {
-  color: var(--accent-color);
-  animation: pulse 1.5s infinite ease-in-out;
-}
-.error {
-  color: #ff4d4d;
-}
+  }
+  .tabs {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin: 24px 0;
+    padding: 0 16px;
+  }
+  
+  .tab {
+    background: transparent;
+    border: none;
+    color: var(--text-secondary);
+    font-size: 16px;
+    font-weight: 500;
+    padding: 8px 16px;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.3s ease;
+  }
+  
+  .tab::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--accent-gradient);
+    transition: width 0.3s ease;
+  }
+  
+  .tab:hover {
+    color: var(--text-primary);
+  }
+  
+  .tab.active {
+    color: var(--text-primary);
+  }
+  
+  .tab.active::after {
+    width: 100%;
+  }
+  .search-container {
+    position: relative;
+    width: 100%;
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: var(--radius-full);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--glass-shadow);
+    transition: all var(--transition-medium) ease;
+  }
+  .search-input {
+    width: 100%;
+    padding: 16px 48px 16px 24px;
+    border: none;
+    border-radius: var(--radius-full);
+    font-size: 16px;
+    outline: none;
+    background: transparent;
+    color: var(--text-primary);
+    transition: all var(--transition-medium) ease;
+  }
+  .search-container::after {
+    content: '';
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="%23666" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>');
+    background-repeat: no-repeat;
+    background-position: center;
+    pointer-events: none;
+  }
+  .search-container:hover {
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+  }
+  .search-input:focus {
+    box-shadow: 0 0 0 2px var(--accent-color);
+  }
+  
+  .search-form {
+    animation: fadeIn 0.8s ease-out;
+  }
+  .loading,
+  .error {
+    text-align: center;
+    padding: 20px;
+    font-size: 16px;
+  }
+  .loading {
+    color: var(--accent-color);
+    animation: pulse 1.5s infinite ease-in-out;
+  }
+  .error {
+    color: #ff4d4d;
+  }

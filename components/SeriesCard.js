@@ -1,27 +1,28 @@
 import { useRouter } from 'next/router';
 
-export default function MovieCard({ movie }) {
-    const router = useRouter();
-    const imageUrl = movie.poster_path
-      ? `https://image.tmdb.org/t/p/w300${movie.poster_path}`
-      : '/placeholder.jpg';
-  
-    const handleClick = () => {
-      router.push(`/movie/${movie.id}`);
-    };
-  
-    return (
-      <div className="movie-card" onClick={handleClick}>
-        <img src={imageUrl} alt={movie.title} />
-        <div className="content">
-          <h3>{movie.title}</h3>
-          <p>{movie.release_date?.split('-')[0] || 'N/A'}</p>
-        </div>
+export default function SeriesCard({ series }) {
+  const router = useRouter();
+  const imageUrl = series.poster_path
+    ? `https://image.tmdb.org/t/p/w300${series.poster_path}`
+    : '/placeholder.jpg';
+
+  const handleClick = () => {
+    router.push(`/series/${series.id}`);
+  };
+
+  return (
+    <div className="series-card" onClick={handleClick}>
+      <img src={imageUrl} alt={series.name} />
+      <div className="content">
+        <h3>{series.name}</h3>
+        <p>{series.first_air_date?.split('-')[0] || 'N/A'}</p>
         <div className="rating">
-          <span>★ {movie.vote_average?.toFixed(1) || 'N/A'}</span>
+          <span>★ {series.vote_average?.toFixed(1) || 'N/A'}</span>
         </div>
-        <style jsx>{`
-        .movie-card {
+      </div>
+
+      <style jsx>{`
+        .series-card {
           position: relative;
           cursor: pointer;
           transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -34,12 +35,12 @@ export default function MovieCard({ movie }) {
           box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
-        .movie-card:hover {
+        .series-card:hover {
           transform: translateY(-8px) scale(1.02);
           box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
         }
 
-        .movie-card img {
+        .series-card img {
           width: 100%;
           height: auto;
           aspect-ratio: 2/3;
@@ -47,7 +48,7 @@ export default function MovieCard({ movie }) {
           transition: transform 0.3s ease;
         }
 
-        .movie-card:hover img {
+        .series-card:hover img {
           transform: scale(1.05);
         }
 
@@ -75,7 +76,7 @@ export default function MovieCard({ movie }) {
           transition: color 0.3s ease;
         }
 
-        .movie-card:hover .content p {
+        .series-card:hover .content p {
           color: #ffffff;
         }
 
@@ -94,12 +95,12 @@ export default function MovieCard({ movie }) {
           transition: transform 0.3s ease;
         }
 
-        .movie-card:hover .rating span {
+        .series-card:hover .rating span {
           transform: scale(1.1);
         }
 
         @media (max-width: 768px) {
-          .movie-card {
+          .series-card {
             max-width: 100%;
           }
 
@@ -117,7 +118,6 @@ export default function MovieCard({ movie }) {
           }
         }
       `}</style>
-      </div>
-      
-    );
-  }
+    </div>
+  );
+}
