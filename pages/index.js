@@ -3,7 +3,7 @@ import SearchBar from '../components/SearchBar';
 import MovieCard from '../components/MovieCard';
 import SeriesCard from '../components/SeriesCard';
 import styles from '../styles/Home.module.css';
-
+import { Analytics } from "@vercel/analytics/react"
 export default function Home() {
   const [activeTab, setActiveTab] = useState('movies');
   const [movies, setMovies] = useState([]);
