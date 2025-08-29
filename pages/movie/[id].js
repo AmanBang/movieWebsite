@@ -12,7 +12,7 @@ export default function MovieDetail() {
       </button>
       <div className={styles.videoWrapper}>
         <iframe
-          src={`https://vidsrc.xyz//embed/movie/${id}`}
+          src={`https://vidsrc.xyz/embed/movie/${id}`}
           title="Movie Video"
           frameBorder="0"
           sandbox="allow-scripts allow-same-origin allow-presentation"
