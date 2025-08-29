@@ -16,7 +16,7 @@ export default function MovieDetail() {
           title="Movie Video"
           frameBorder="0"
           sandbox="allow-scripts allow-same-origin allow-presentation"
-          referrerPolicy="no-referrer"
+          referrerPolicy="origin"
           allow="autoplay; encrypted-media; picture-in-picture"
           allowFullScreen
         />
