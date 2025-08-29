@@ -24,7 +24,7 @@ export default function WatchEpisode() {
         return;
       }
 
-      setVideoSrc(`https://vidbinge.dev/embed/tv/${seriesId}/${seasonNumber}/${episodeNumber}`);
+      setVideoSrc(`https://vidsrc.xyz/embed/tv/${seriesId}/${seasonNumber}/${episodeNumber}`);
     }
   }, [router.isReady, router.query]);
 
