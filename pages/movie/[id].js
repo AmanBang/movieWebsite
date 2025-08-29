@@ -15,6 +15,7 @@ export default function MovieDetail() {
           src={`https://vidsrc.xyz/embed/movie/${id}`}
           title="Movie Video"
           frameBorder="0"
+          sandbox="allow-scripts allow-presentation"
           referrerPolicy="origin"
           allow="autoplay; encrypted-media; picture-in-picture"
           allowFullScreen
