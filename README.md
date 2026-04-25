@@ -70,11 +70,10 @@ Open 👉 [http://localhost:3000](http://localhost:3000)
 
 ---
 
-## 📈 Why This Project Stands Out
+## 📈 Project Features
 
 * Demonstrates real-world frontend architecture using Next.js
-* Shows ability to build **production-ready UI systems**
-* Highlights API integration and dynamic rendering
+* API integration and dynamic rendering
 * Clean code structure suitable for scaling
 
 ---
